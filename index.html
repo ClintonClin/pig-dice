@@ -1,26 +1,27 @@
 <html>
   <head>
     <title> Pig Dice Game  </title>
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Notable" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/scripts.js"></script>
   </head>
   <body>
     <div class="jumbotron">
       <h1 class="header"><strong> PIG DICE</strong></h1>
     </div>
       <form id="myForm" name="myForm" action="index.html" method="POST">
-      <input type="radio" name="Opponent" value="1">1. Play against opponent<br>
-      <br>
+      <input type="radio" name="computer" value="1">1. Play against opponent<br>
+
       <input type="radio" name="computer" value="2">2. Play against computer (EASY)<br>
-      <br>
+
       <input type="radio" name="computer" value="3">3. Play against computer (HARD)<br>
 
-      <input type="button" class="btn" onClick="()" value="CHOOSE">
+      <input type="button" class="btn" onClick="player()" value="CHOOSE">
     </form>
-
     <div class="container">
       <div class ="row no-gutter">
       <div class="col-md-5">
@@ -32,11 +33,16 @@
         <br>
         <br>
         <br>
-        <output name="score"> Score: </output>
+        <output name="score" id="score1"> Score: </output>
       </div>
-      <div class="col-md-1">
-        <input type="button" class="btn" onClick="()" value="ROLL DICE">
-
+      <div class="col-md-2">
+        <input type="button" class="roll" onClick="rollDice()" value="ROLL DICE">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="dice1" class="dice">0</div>
+        <input type="button" class="roll" value="HOLD">
       </div>
       <div class="col-md-5">
         <h2> PLAYER 2<h2><br>
@@ -47,9 +53,11 @@
         <br>
         <br>
         <br>
-        <output name="score"> Score: </output>
+        <output name="score" id="score2"> Score: </output>
       </div>
     </div>
   </div>
+  <br>
+  <br>
   </body>
 </html>
